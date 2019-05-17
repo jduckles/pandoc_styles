@@ -5,13 +5,12 @@
 NOTE=$1
 OUTPUT=$2
 if [[ -z $3 ]]; then
-    STYLE_CODE=$3 
+    STYLE_CODE="ab" 
 else
-    STYLE_CODE="ab"
+    STYLE_CODE=$3
 fi
 
 DATA_DIR="${HOME}/Documents/pandoc_styles/${STYLE_CODE}"
 
 export CODIMD_SERVER='https://pad.duckles.nz'
-codimd export --md ${NOTE} - | pandoc -f markdown --data-dir=${DATA_DIR}
--o ${OUTPUT} 
+codimd export --md ${NOTE} - | pandoc -f markdown --data-dir=${DATA_DIR} -o ${OUTPUT} 
