@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Script to take Codimd notes and turn them into styled documents using a given style.
+
+NOTE=$1
+OUTPUT=$2
+if [[ -z $3 ]]; then
+    STYLE_CODE=$3 
+else
+    STYLE_CODE="ab"
+fi
+
+DATA_DIR="${HOME}/Documents/pandoc_styles/${STYLE_CODE}"
+
+export CODIMD_SERVER='https://pad.duckles.nz'
+codimd export --md ${NOTE} - | pandoc -f markdown --data-dir=${DATA_DIR}
+-o ${OUTPUT} 
