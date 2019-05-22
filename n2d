@@ -12,7 +12,6 @@ fi
 
 DATA_DIR="${HOME}/git/pandoc_styles/${STYLE_CODE}"
 
-export CODIMD_SERVER='https://pad.duckles.nz'
 if [[ -v ${CODIMD_SERVER} ]]; then
     >&2 echo "Found CODIMD_SERVER, using ${CODIMD_SERVER}"
 else
