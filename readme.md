@@ -13,10 +13,13 @@ git clone --recurse-submodules https://github.com/jduckles/pandoc_styles/
 
 ## Requirements
 
+### Mac 
 ```
-# Mac 
 brew install pandoc 
-# Linux (Ubuntu/Debian)
+```
+
+### Linux (Ubuntu/Debian)
+```
 apt-get install pandoc
 ```
 
