@@ -10,7 +10,7 @@ else
     STYLE_CODE=$3
 fi
 
-DATA_DIR="${HOME}git/pandoc_styles/${STYLE_CODE}"
+DATA_DIR="${HOME}/git/pandoc_styles/${STYLE_CODE}"
 
 export CODIMD_SERVER='https://pad.duckles.nz'
 if [[ -v ${CODIMD_SERVER} ]]; then
