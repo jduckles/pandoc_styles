@@ -24,7 +24,7 @@ This can be used simply as a set of styles for pandoc applied using `--data-dir=
 
 Or you can use the included `n2d` to take a notepad from a codimd server and convert it into a `.docx`.
 
-** Codimd CLI ** Details at: https://github.com/codimd/cli (requires curl, wget and jq to be installed)
+**Codimd CLI** Details at: https://github.com/codimd/cli (requires curl, wget and jq to be installed)
 
 ## To create your own style
 
