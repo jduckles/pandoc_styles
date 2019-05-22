@@ -3,6 +3,14 @@
 A set of styles I use for my work, using pandoc. Two examples, one for my employer 
 [AbacusBio](https://abacusbio.com) and one for a project I work on [Genomics Aotearoa](https://genomics-aotearoa.org.nz)
 
+
+## Clone
+
+```
+cd ~/git/ # if thats where you store git repos, if not make sure to modify 
+git clone --recurse-submodules https://github.com/jduckles/pandoc_styles/
+```
+
 ## Requirements
 
 ```
@@ -11,6 +19,8 @@ brew install pandoc
 # Linux (Ubuntu/Debian)
 apt-get install pandoc
 ```
+
+** Codimd CLI ** Details at: https://github.com/codimd/cli (requires curl, wget and jq to be installed)
 
 ## To create your own style
 
