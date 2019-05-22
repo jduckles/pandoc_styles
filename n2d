@@ -10,7 +10,14 @@ else
     STYLE_CODE=$3
 fi
 
-DATA_DIR="${HOME}/Documents/pandoc_styles/${STYLE_CODE}"
+DATA_DIR="${HOME}git/pandoc_styles/${STYLE_CODE}"
 
 export CODIMD_SERVER='https://pad.duckles.nz'
+if [[ -v ${CODIMD_SERVER} ]]; then
+    >&2 echo "Found CODIMD_SERVER, using ${CODIMD_SERVER}"
+else
+    echo "Please set CODIMD_SERVER environment variable with:
+        export CODIMD_SERVER='http://hostname.org'"
+fi
+
 codimd export --md ${NOTE} - | pandoc -f markdown --data-dir=${DATA_DIR} -o ${OUTPUT} 
