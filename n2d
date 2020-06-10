@@ -2,15 +2,24 @@
 
 # Script to take Codimd notes and turn them into styled documents using a given style.
 
+DEFAULT_TEMPLATE="ab"
+
 NOTE=$1
 OUTPUT=$2
 if [[ -z $3 ]]; then
-    STYLE_CODE="ab" 
+    STYLE_CODE=${DEFAULT_TEMPLATE}
 else
     STYLE_CODE=$3
 fi
 
-DATA_DIR="${HOME}/Documents/pandoc_styles/${STYLE_CODE}"
+DATA_DIR="${HOME}/git/pandoc_styles/${STYLE_CODE}"
 
-export CODIMD_SERVER='https://pad.duckles.nz'
+if [[ -z "${CODIMD_SERVER}" ]]; then
+    echo "Please set CODIMD_SERVER environment variable with:
+        export CODIMD_SERVER='http://hostname.org'"
+    exit
+else
+    echo "Found CODIMD_SERVER, using ${CODIMD_SERVER}"
+fi
+
 codimd export --md ${NOTE} - | pandoc -f markdown --data-dir=${DATA_DIR} -o ${OUTPUT} 
